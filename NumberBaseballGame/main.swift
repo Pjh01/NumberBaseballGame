@@ -1,3 +1,3 @@
-let game = BaseballGame()
+let game = GameManagement()
 
-game.start()
+game.startGame()
