@@ -1,11 +1,3 @@
-//
-//  main.swift
-//  NumberBaseballGame
-//
-//  Created by estelle on 5/29/25.
-//
+let game = BaseballGame()
 
-import Foundation
-
-print("Hello, World!")
-
+game.start()
