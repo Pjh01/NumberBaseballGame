@@ -19,8 +19,9 @@ class BaseballGame {
     }
     
     func makeAnswer() -> Int {
-        let selectNumbers = Array(1...9).shuffled().prefix(3)
-        let answer = selectNumbers[0] * 100 + selectNumbers[1] * 10 + selectNumbers[2]
+        let firstNumber = Int.random(in: 1...9)
+        let remainNumbers = Array(0...9).filter { $0 != firstNumber }.shuffled().prefix(2)
+        let answer = firstNumber * 100 + remainNumbers[0] * 10 + remainNumbers[1]
         
         return answer
     }
@@ -28,7 +29,7 @@ class BaseballGame {
     func checkInputNumber(_ number: String) -> Bool {
         let numberArray = number.compactMap { $0.wholeNumberValue }
         
-        return numberArray.count == 3 && Set(numberArray).count == 3 && !numberArray.contains(0)
+        return numberArray.count == 3 && Set(numberArray).count == 3 && numberArray[0] != 0
     }
     
     func checkAnswer(userNumber: String, answer: Int) -> Bool {
