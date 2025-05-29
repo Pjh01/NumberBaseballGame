@@ -1,5 +1,6 @@
 class GameManagement {
     let baseballGame = BaseballGame()
+    let gameRecord = GameRecord()
     
     func startGame() {
         while true {
@@ -12,9 +13,10 @@ class GameManagement {
             
             switch userInput {
             case "1":
-                baseballGame.start()
-            //case "2":
-                //
+                let record = baseballGame.start()
+                gameRecord.addRecord(record)
+            case "2":
+                gameRecord.printRecords()
             //case "3":
                 //
             default:

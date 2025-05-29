@@ -1,6 +1,7 @@
 class BaseballGame {
-    func start() {
+    func start() -> Int {
         let answer = makeAnswer()
+        var trialCount = 0
         
         print("< 게임을 시작합니다 >")
         
@@ -12,10 +13,12 @@ class BaseballGame {
                 continue
             }
             
+            trialCount += 1
             if checkAnswer(userNumber: userNumber, answer: answer) {
                 break
             }
         }
+        return trialCount
     }
     
     func makeAnswer() -> Int {
