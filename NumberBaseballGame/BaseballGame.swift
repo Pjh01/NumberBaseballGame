@@ -10,16 +10,16 @@ class BaseballGame {
         while true {
             print("숫자를 입력하세요")
             
-            // 사용자 입력을 받아 Int 변환 여부 확인
-            guard let userNumber = readLine(), let _ = Int(userNumber) else {
-                print("올바르지 않은 입력값입니다\n")
-                continue
-            }
+            // 사용자 입력을 받기
+            let userNumber = readLine() ?? ""
             
             // 입력값 유효성 검사 및 숫자 배열 변환
             let (isOk, userNumberArray) = checkInputNumber(userNumber)
             guard isOk else {
-                print("서로 다른 숫자로 이루어진 3자리 수를 입력해주세요\n")
+                print("""
+                올바르지 않은 입력값입니다.
+                서로 다른 숫자로 이루어진 3자리 수를 입력해주세요\n
+                """)
                 continue
             }
             
